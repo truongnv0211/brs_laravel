@@ -10,9 +10,9 @@
 <body>
   @include('layouts.header')
   <div class="container">
-    @if(Session::has('flash_message'))
+    @if(session()->has('flash_message'))
       <div class="alert alert-success">
-        {{ Session::get('flash_message') }}
+        {{ session()->get('flash_message') }}
       </div>
     @endif
     @yield('content')

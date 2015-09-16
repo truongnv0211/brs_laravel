@@ -10,7 +10,7 @@
         @if(Auth::user()->admin)
           <li><a href="admin/dashboard">@lang('auth.admin')</a></li>
         @endif
-        <li><a href="auth/logout">@lang('staticpage.log_out')</a></li>
+        <li><a href="{{ route('auth.logout') }}">@lang('staticpage.log_out')</a></li>
       @else
         <li><a href="auth/login">@lang('staticpage.log_in')</a></li>
       @endif
