@@ -8,7 +8,7 @@
       <li><a href="/help">@lang('staticpage.help')</a></li>
       @if(Auth::check())
         @if(Auth::user()->admin)
-          <li><a href="#">@lang('auth.admin')</a></li>
+          <li><a href="admin/dashboard">@lang('auth.admin')</a></li>
         @endif
         <li><a href="auth/logout">@lang('staticpage.log_out')</a></li>
       @else
