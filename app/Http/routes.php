@@ -19,7 +19,7 @@ Route::get('/help', ['as' => 'staticpage.help', 'uses' => 'StaticPageController@
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
 
 // Registration routes...
 
@@ -31,4 +31,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){
 
     Route::get('dashboard', 'DashboardController@index');
+    Route::resource('book', 'BookController');
+    Route::resource('category', 'CategoryController', ['except' => 'show']);
 });
