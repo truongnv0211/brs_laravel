@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'staticpage.home', 'uses' => 'StaticPageController@home']);
+Route::get('/help', ['as' => 'staticpage.help', 'uses' => 'StaticPageController@help']);
+
