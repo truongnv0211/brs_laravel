@@ -18,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = DB::table('categories')->paginate(10);
+        $categories = Category::all()->limit(50);
         return view('admin.category.index', ['categories' => $categories]);
     }
 
